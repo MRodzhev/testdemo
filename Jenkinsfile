@@ -32,6 +32,8 @@ pipeline {
                     sh """
                     #!/bin/bash
                     scp -v -o StrictHostKeyChecking=no index.html ubuntu@3.72.249.221:/var/www/html
+                    exit 0
+                    """
                     
                     }
                 }
