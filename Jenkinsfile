@@ -33,7 +33,7 @@ pipeline {
                     #!/bin/bash
                     ssh -o StrictHostKeyChecking=no ubuntu@3.72.249.221
                     docker pull rodzhev/firstdemo:latest
-                    docker run -d -it --name rodzhevish -p 5000:5000 rodzhev/firstdemo:latest
+                    docker run -t -d --name rodzhevishh -p 5000:5000 rodzhev/firstdemo:latest
                     """
                     
                     }
