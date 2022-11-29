@@ -32,7 +32,7 @@ pipeline {
                     sh """
                     #!/bin/bash
                     ssh -T -o StrictHostKeyChecking=no -i sshforservers.pem ubuntu@3.72.249.221
-                    scp -v -o StrictHostKeyChecking=no index.html ubuntu@http://3.72.249.221:/var/www/html << EOF
+                    scp -v -o StrictHostKeyChecking=no index.html ubuntu@3.72.249.221:/var/www/html << EOF
                     docker container stop demo
                     docker container rm demo
                     docker rmi -f rodzhev/firstdemo:latest
