@@ -37,7 +37,7 @@ pipeline {
                     docker container rm demo
                     docker rmi -f rodzhev/firstdemo:latest
                     docker pull rodzhev/firstdemo:latest
-                    docker run -d -p 2222:5000 --name demo rodzhev/firstdemo:latest
+                    docker run -d -p 2222:5000 --name appcontainer rodzhev/firstdemo:latest
                     exit 0
                     << EOF
                     """
