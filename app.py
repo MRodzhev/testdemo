@@ -1,6 +1,8 @@
 from flask import Flask, render_template
 import random
 app = Flask(__name__)
+
+
 # list of cat images
 images = [
   "https://media.giphy.com/media/Zd4UqTdmQdSl3lk9qB/giphy.gif"
