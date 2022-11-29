@@ -32,6 +32,8 @@ pipeline {
                     sh """
                     #!/bin/bash
                     ssh -T -o StrictHostKeyChecking=no -i sshforservers.pem ubuntu@3.72.249.22 << EOF
+                    docker container stop demo
+                    docker container rm demo
                     docker rmi -f rodzhev/firstdemo:latest
                     docker pull rodzhev/firstdemo:latest
                     docker run -d -p 2222:80 --name demo rodzhev/firstdemo:latest
