@@ -32,6 +32,8 @@ pipeline {
                     sh """
                     #!/bin/bash
                     ssh -T -o StrictHostKeyChecking=no ubuntu@3.127.255.231 << EOF
+                    docker container stop firstdemo
+                    docker container rm firstdemo
                     docker system prune -a -y
                     docker pull rodzhev/firstdemo:latest 
                     docker run -t -d --name firstdemo -p 5000:5000 rodzhev/firstdemo:latest
