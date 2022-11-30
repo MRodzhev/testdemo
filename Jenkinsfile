@@ -30,10 +30,9 @@ pipeline {
             steps {
                 script {
                     sh """
-                    #!/bin/bash
-                    ssh -o StrictHostKeyChecking=no ubuntu@3.126.50.23
-                    docker pull rodzhev/firstdemo:latest
-                    docker run -t -d --name firstdemo -p 5000:5000 rodzhev/firstdemo:latest
+                    
+                    ssh -o StrictHostKeyChecking=no -i sshforservers.pem ubuntu@3.126.50.23 "docker pull rodzhev/firstdemo:latest" "docker run -t -d --name firstdemo -p 5000:5000 rodzhev/firstdemo:latest"
+                    
                     """
                     
                     }
