@@ -31,9 +31,10 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
-                    ssh -tt -o StrictHostKeyChecking=no ubuntu@3.126.50.23 << EOF
+                    ssh -T -o StrictHostKeyChecking=no ubuntu@3.126.50.23 << EOF
                     docker pull rodzhev/firstdemo:latest 
                     docker run -t -d --name firstdemo -p 5000:5000 rodzhev/firstdemo:latest
+                    exit 0
                     << EOF
                     
                     """
