@@ -31,7 +31,7 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
-                    ssh -T -o StrictHostKeyChecking=no ubuntu@3.73.66.141 << EOF
+                    ssh -T -o StrictHostKeyChecking=no ubuntu@3.123.0.170 << EOF
                     docker container stop firstdemo
                     docker container rm firstdemo
                     docker system prune -a -y
