@@ -30,11 +30,8 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
-                    docker container stop secondattempt
-                    docker container rm secondattempt
-                    docker system prune -a -y
                     docker pull rodzhev/secondattempt:latest 
-                    docker run -t -d --name firstdemo -p 5000:5000 rodzhev/secondattempt:latest
+                    docker run -t -d --name secondattempt -p 5000:5000 rodzhev/secondattempt:latest
                     << EOF
                     
                     """
