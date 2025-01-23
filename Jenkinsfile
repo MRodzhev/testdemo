@@ -30,8 +30,8 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
-                    docker pull rodzhev/secondattempt:$BUILD_ID
-                    docker run -t -d --name secondattempt -p 5000:5000 rodzhev/secondattempt:latest
+                    docker pull rodzhev/secondattempt:latest
+                    docker run -t -d --name secondattempt -p 5000:5000 rodzhev/secondattempt:$BUILD_ID
                     << EOF
                     
                     """
