@@ -31,7 +31,7 @@ pipeline {
                     sh """
                     #!/bin/bash
                     docker pull rodzhev/secondattempt:$BUILD_ID
-                    docker run -t -d --name secondattempt -p 5000:5000 rodzhev/secondattempt:$BUILD_ID
+                    docker run -t -d --name secondattempt -p 5001:5000 rodzhev/secondattempt:$BUILD_ID
                     << EOF
                     
                     """
