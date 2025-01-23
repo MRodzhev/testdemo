@@ -14,6 +14,5 @@ COPY templates/index.html /usr/src/app/templates/
 EXPOSE 5000
 # run the application
 CMD ["python", "/usr/src/app/app.py"]
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
 
 
