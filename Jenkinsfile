@@ -22,7 +22,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
         
-                sh 'docker push rodzhev/firstdemo:latest'
+                sh 'docker push rodzhev/firstdemo:$BUILD_ID'
             }
         }
         stage('SSH') {
