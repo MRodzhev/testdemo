@@ -35,7 +35,7 @@ pipeline {
                     docker container rm firstdemo
                     docker system prune -a -y
                     docker pull rodzhev/firstdemo:latest 
-                    docker run -t -d --name firstdemo -p 5000:5000 rodzhev/firstdemo:latest
+                    docker run -t -d --name firstdemo -p 5000:5000 rodzhev/secondattempt:latest
                     << EOF
                     
                     """
