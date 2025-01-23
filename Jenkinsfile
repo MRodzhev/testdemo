@@ -30,6 +30,8 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
+                    docker stop secondattempt
+                    docker rm secondattempt
                     docker pull rodzhev/secondattempt:$BUILD_ID
                     docker run -t -d --name secondattempt -p 5001:5000 rodzhev/secondattempt:$BUILD_ID tail -f /dev/null
                     << EOF
