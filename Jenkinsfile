@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Access GitHub') {
            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-github', url: 'git@github.com:MRodzhev/testdemo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github_Creds', url: 'git@github.com:MRodzhev/testdemo.git']]])
             }
         }
         stage('Docker Build') {
@@ -31,7 +31,7 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
-                    ssh -T -o StrictHostKeyChecking=no ubuntu@3.123.0.170 << EOF
+                    << EOF
                     docker container stop firstdemo
                     docker container rm firstdemo
                     docker system prune -a -y
