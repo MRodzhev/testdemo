@@ -11,7 +11,6 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'docker build -t rodzhev/firstdemo:latest .'
                 sh 'docker build -t rodzhev/firstdemo:$BUILD_ID .'
             }
         }
