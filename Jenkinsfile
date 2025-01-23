@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'docker build -t rodzhev/firstdemo:$BUILD_ID .'
+                sh 'docker build -t rodzhev/secondattempt:$BUILD_ID .'
             }
         }
         stage('Docker Login') {
@@ -22,7 +22,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
         
-                sh 'docker push rodzhev/firstdemo:$BUILD_ID'
+                sh 'docker push rodzhev/secondattempt:$BUILD_ID'
             }
         }
         stage('SSH') {
@@ -34,7 +34,7 @@ pipeline {
                     docker container stop firstdemo
                     docker container rm firstdemo
                     docker system prune -a -y
-                    docker pull rodzhev/firstdemo:latest 
+                    docker pull rodzhev/secondattempt:latest 
                     docker run -t -d --name firstdemo -p 5000:5000 rodzhev/secondattempt:latest
                     << EOF
                     
