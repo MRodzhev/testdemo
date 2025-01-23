@@ -33,7 +33,7 @@ pipeline {
                     docker stop secondattempt
                     docker rm secondattempt
                     docker pull rodzhev/secondattempt:$BUILD_ID
-                    docker run -it -d --name secondattempt -p 5001:5000 rodzhev/secondattempt:$BUILD_ID
+                    docker run -t -d --name secondattempt -p 5001:5000 rodzhev/secondattempt:$BUILD_ID /bin/bash
                     << EOF
                     
                     """
