@@ -30,7 +30,6 @@ pipeline {
                 script {
                     sh """
                     #!/bin/bash
-                    << EOF
                     docker container stop firstdemo
                     docker container rm firstdemo
                     docker system prune -a -y
